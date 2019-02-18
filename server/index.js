@@ -13,7 +13,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //Routes
-app.use('/api/serviceSpotify', require('./routes/spotify.routes'));
+app.use('/api/', require('./routes/spotify.routes'));
 
 //Starting the serve
 app.listen(app.get('port'), () => {

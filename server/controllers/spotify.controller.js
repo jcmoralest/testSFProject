@@ -1,23 +1,19 @@
 const SpotifyWebApi = require('spotify-web-api-node');
 
 const credentials = {
-    clientId: 'ffe46cf985e44439b9a1c7f6a36925c7',
-    clientSecret: '3ccf57ead98141f9bff3aceec3452634',
-    Authorization: 'Bearer BQDGqCRpqwYzXoIamUkYGBdeXWtEc-p6Di_YQga3YLZ22M8_zkJdp7LqCMfqbOHI8rjxBo3ykmugm5VqLo1ylyGj-fFUORMdDNk_1MyAW7NkKVZEtb-1_SZkXCigLp6ojrCIFXnFF6UnlSYzFSpdY0DVfk26ZguH4qIYqqkFwOk'
+    clientId: '774100ec5f27433d9ac92077afa86ebe',
+    clientSecret: '22e778e93a014f39905fb0472bef2449',
+    //Authorization: 'Bearer BQDGqCRpqwYzXoIamUkYGBdeXWtEc-p6Di_YQga3YLZ22M8_zkJdp7LqCMfqbOHI8rjxBo3ykmugm5VqLo1ylyGj-fFUORMdDNk_1MyAW7NkKVZEtb-1_SZkXCigLp6ojrCIFXnFF6UnlSYzFSpdY0DVfk26ZguH4qIYqqkFwOk'
 };
 
 const spotifyController = {};
 const spotifyApi = new SpotifyWebApi(credentials);
 
-// spotifyController.getUser = (req) => {
-//     let resp = await spotifyApi.getUser(req.params.query);
-//     console.log(resp);
-//     res.json(resp.body);
-// };
-
 spotifyController.getMe = async() => {
-    await spotifyController.getToken();
-    spotifyApi.getUser('eewsa')
+    console.log("Entro");
+
+    // await spotifyController.getToken();
+    await spotifyApi.getUser('eewsa')
         .then(function(data) {
             console.log('Some information about this user', data.body);
         }, function(err) {

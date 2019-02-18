@@ -4,7 +4,7 @@ const router = express.Router();
 const albumController = require("../controllers/album.controller");
 const spotifyController = require("../controllers/spotify.controller");
 
-router.get('/:query', spotifyController.getUser);
+router.get('/', spotifyController.getMe);
 
 // router.get('/', albumController.getAlbums);
 // router.get('/:id', albumController.getAlbum);
